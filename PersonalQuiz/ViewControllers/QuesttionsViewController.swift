@@ -8,6 +8,7 @@
 import UIKit
 
 class QuesttionsViewController: UIViewController {
+    //MARK: - @IBOutlet
     @IBOutlet weak var questionProgressView: UIProgressView!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var singelStackView: UIStackView!
@@ -25,21 +26,25 @@ class QuesttionsViewController: UIViewController {
         }
     }
     
+    //MARK: - Private Properties
     private let questions = Question.getQuestions()
     private var answersChosen: [Answer] = []
     private var questionsIndex = 0
     private var currentAnswers: [Answer] {
         questions[questionsIndex].answers
     }
-    
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
     }
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let resultsVC = segue.destination as? ResultViewController else { return }
         resultsVC.answers = answersChosen
     }
+    
+    //MARK: - @IBAction
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
         guard let buttonIndex = singleButtons.firstIndex(of: sender) else { return }
         let currentAnswer = currentAnswers[buttonIndex]

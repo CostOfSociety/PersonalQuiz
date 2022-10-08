@@ -324,7 +324,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="kvi-wU-fJT">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="6eW-i8-hVU">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="6eW-i8-hVU">
                             <connections>
                                 <action selector="doneButtonPressed:" destination="G8B-sK-US3" id="4qp-i6-2Uf"/>
                             </connections>
