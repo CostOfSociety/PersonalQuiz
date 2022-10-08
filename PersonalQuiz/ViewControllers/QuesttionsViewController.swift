@@ -36,9 +36,12 @@ class QuesttionsViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let resultsVC = segue.destination as? ResultViewController else { return }
+        resultsVC.answers = answersChosen
+    }
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
-        guard let buttonIndex = singleButtons.firstIndex(of: sender) else {return}
+        guard let buttonIndex = singleButtons.firstIndex(of: sender) else { return }
         let currentAnswer = currentAnswers[buttonIndex]
         answersChosen.append(currentAnswer)
         nextQuestion()

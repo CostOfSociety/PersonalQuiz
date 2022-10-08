@@ -306,7 +306,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы – осьминог!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtg-Yi-Tt2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы – осьминог!" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtg-Yi-Tt2">
                                         <rect key="frame" x="83" y="68" width="122.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -323,7 +323,17 @@
                             <constraint firstItem="kcd-9Y-SQk" firstAttribute="leading" secondItem="ePi-Hp-SC8" secondAttribute="leading" constant="16" id="tTa-MB-NXf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Результат" id="kvi-wU-fJT"/>
+                    <navigationItem key="navigationItem" title="Результат" id="kvi-wU-fJT">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="6eW-i8-hVU">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="G8B-sK-US3" id="4qp-i6-2Uf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Mtg-Yi-Tt2" id="LTJ-Ge-yqj"/>
+                        <outlet property="resultLabel" destination="RZb-ww-1bI" id="b4X-8d-G3a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZH6-hE-q9r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
